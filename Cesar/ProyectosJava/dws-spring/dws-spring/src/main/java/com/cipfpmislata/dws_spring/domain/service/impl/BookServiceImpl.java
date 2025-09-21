@@ -1,6 +1,8 @@
 package com.cipfpmislata.dws_spring.domain.service.impl;
 
+import com.cipfpmislata.dws_spring.domain.mapper.BookMapper;
 import com.cipfpmislata.dws_spring.domain.model.Book;
+import com.cipfpmislata.dws_spring.domain.repository.BookRepository;
 import com.cipfpmislata.dws_spring.domain.service.BookService;
 import com.cipfpmislata.dws_spring.domain.service.dto.BookDto;
 import org.springframework.stereotype.Service;
@@ -10,19 +12,26 @@ import java.util.List;
 @Service
 public class BookServiceImpl implements BookService {
 
-    List<Book> books = List.of(
-            new Book("948193-2132-312", "Book One", List.of(), null),
-            new Book("948493-2132-312", "Book Two", List.of(), null),
-            new Book("947193-2132-312", "Book Three", List.of(), null)
-    );
+    private final BookRepository bookRepository;
+
+    public BookServiceImpl(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
 
     @Override
     public List<BookDto> getAll() {
-        return books.stream().map(book -> new BookDto(book.getIsbn(), book.getTitle())).toList();
+        return BookRepository .findAll()
+                .stream()
+                .map(BookMapper.getInstance()::fromBookEntityToBook)
+                .map(BookMapper.getInstance()::fromBookToBookDto)
+                .toList();
     }
 
     @Override
     public BookDto getByIsbn(String isbn) {
-        return books.stream().filter(book -> book.getIsbn().equals(isbn)).findFirst().orElse(null);
+        return bookRepository .findByIsbn(isbn)
+                .map(BookMapper.getInstance()::fromBookEntityToBook)
+                .map(BookMapper.getInstance()::fromBookToBookDto)
+                .orElse(null);
     }
 }
