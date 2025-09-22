@@ -1,9 +1,10 @@
 import { Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import data from '../../items/articulos.json' assert { type: 'json' };
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-articulo',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './articulo.html',
   styleUrl: './articulo.scss'
 })
@@ -26,4 +27,13 @@ export class Articulo implements OnChanges{
       this.unidades = item?.unidades ?? 0;
     }
   }
+
+
+  frutas = ['manzana', 'pera', 'naranja', 'plátano'];
+
+  constructor() {
+    this.frutas.forEach(element => console.log(element));
+  }
+
+  nombrecito:string = "Gilberto";
 }
