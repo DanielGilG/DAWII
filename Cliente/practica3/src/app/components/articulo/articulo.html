@@ -1,5 +1,5 @@
 <div class="card" style="width: 18rem;">
-    <img src="assets/{{id}}.jpg" class="card-img-top">
+    <img src="assets/{{nombrecito}}.jpg" class="card-img-top">
     <div class="card-body">
         <h5 class="card-title">{{nombre}}({{unidades}})</h5>
         <p class="card-text">{{descripcion}}</p>
@@ -7,7 +7,7 @@
             <p class="card-text text-center">{{precio}}</p>
         </b>
     </div>
-    <button class="btn btn-primary" [disabled] = items.unidades==0>Comprar</button>
+    <button class="btn btn-primary" [disabled]="unidades == 0">Comprar</button>
 </div>
 
 <input type="text" [(ngModel)]="nombrecito">
