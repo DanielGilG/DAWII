@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "practica3": {
+    "StudentManager": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -30,7 +30,6 @@
               }
             ],
             "styles": [
-              "bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ]
           },
@@ -62,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "practica3:build:production"
+              "buildTarget": "StudentManager:build:production"
             },
             "development": {
-              "buildTarget": "practica3:build:development"
+              "buildTarget": "StudentManager:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,8 +94,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
