@@ -1,7 +1,6 @@
 import { Component, input } from '@angular/core';
 import {ALUMNOS} from "../../data/students";
 import {Calificacion, Alumno} from "../../interface/interfaces";
-import { min } from 'rxjs';
 
 @Component({
   selector: 'app-manager',
@@ -35,7 +34,17 @@ export class Manager {
     }
   }
 
-  subeUnPunto(){}
+  subeUnPunto(){
+    this.alumnos.forEach(alumno => {
+      alumno.calificaciones.forEach(calificacion => {
+        if (calificacion.nota < 10){
+          calificacion.nota += 1;
+        }
+      });
+    });
+  }
+
+
   alumnosCiudad(){}
   alumnosCurso(){}
   ordenEdad(){}
@@ -44,4 +53,5 @@ export class Manager {
   borraAlumno(){}
   nuevoAlumno(){}
   nuevaAsignatura(){}
+
 }
