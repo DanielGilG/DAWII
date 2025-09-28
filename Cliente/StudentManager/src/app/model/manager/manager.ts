@@ -44,9 +44,15 @@ export class Manager {
     });
   }
 
+  alumnosCiudad(){
+    let ciudad = prompt("Ciudad: ");
+    let alumnosCiudad = this.alumnos.filter(alumno => alumno.ciudad === ciudad);
+    console.log("Alumnos de " + ciudad + ": ");
+    console.log(alumnosCiudad);
+  }
 
-  alumnosCiudad(){}
   alumnosCurso(){}
+
   ordenEdad(){}
   ordenaNombreAsc(){}
   ordenaNombreDesc(){}
