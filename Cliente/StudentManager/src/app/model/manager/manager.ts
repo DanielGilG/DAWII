@@ -51,7 +51,8 @@ export class Manager {
     console.log(alumnosCiudad);
   }
 
-  alumnosCurso(){}
+  alumnosCurso(){
+  }
 
   ordenEdad(){}
   ordenaNombreAsc(){}
