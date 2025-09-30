@@ -47,11 +47,25 @@ export class Manager {
   alumnosCiudad(){
     let ciudad = prompt("Ciudad: ");
     let alumnosCiudad = this.alumnos.filter(alumno => alumno.ciudad === ciudad);
+    if (alumnosCiudad.length === 0){
+      console.log("No hay alumnos");
+      return;
+    }else{
     console.log("Alumnos de " + ciudad + ": ");
     console.log(alumnosCiudad);
+    }
   }
 
   alumnosCurso(){
+    let curso = prompt("Curso: ");
+    let alumnosCurso = this.alumnos.filter(alumno => alumno.codigo.substring(0,3) === curso);
+    if (alumnosCurso.length === 0){
+      console.log("No hay alumnos");
+      return;
+    }else{
+    console.log("Alumnos de " + curso + ": ");
+    console.log(alumnosCurso);
+    }
   }
 
   ordenEdad(){}
