@@ -68,10 +68,50 @@ export class Manager {
     }
   }
 
-  ordenEdad(){}
-  ordenaNombreAsc(){}
-  ordenaNombreDesc(){}
-  borraAlumno(){}
+  ordenEdad(){
+    let edades = this.alumnos.map(alumno => alumno.edad);
+    if (edades.length === 0){
+      console.log("No hay alumnos");
+      return;
+    }
+    edades.sort((a, b) => a - b);
+    console.log("Edades de los alumnos: ");
+    console.log(edades);
+  }
+
+  ordenaNombreAsc(){
+    let nombres = this.alumnos.map(alumno => alumno.nombre);
+    if (nombres.length === 0){
+      console.log("No hay alumnos");
+      return;
+    }
+    nombres.sort();
+    console.log("Nombres de los alumnos: ");
+    console.log(nombres);
+  }
+
+  ordenaNombreDesc(){
+    let nombres = this.alumnos.map(alumno => alumno.nombre);
+    if (nombres.length === 0){
+      console.log("No hay alumnos");
+      return;
+    }
+    nombres.sort().reverse();
+    console.log("Nombres de los alumnos: ");
+    console.log(nombres);
+  }
+
+  borraAlumno(){
+    let nombre = prompt("Nombre del alumno a borrar: ");
+    let index = this.alumnos.findIndex(alumno => alumno.nombre === nombre);
+    if (index !== -1){
+      this.alumnos.splice(index, 1);
+      console.log("Alumno borrado");
+    }else{
+      console.log("Alumno no encontrado");
+    }
+  }
+
   nuevoAlumno(){}
   nuevaAsignatura(){}
 
