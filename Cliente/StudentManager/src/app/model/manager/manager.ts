@@ -112,7 +112,22 @@ export class Manager {
     }
   }
 
-  nuevoAlumno(){}
+  nuevoAlumno(){
+    let nombre = prompt("Nombre: ");
+    let edad = parseInt(prompt("Edad: ") || "0");
+    let ciudad = prompt("Ciudad: ") || "";
+    let codigo = prompt("Codigo: ") || "";
+    let calificaciones: Calificacion[] = [];
+    let nuevoAlumno: Alumno = {
+      nombre: nombre || "",
+      edad: edad,
+      ciudad: ciudad,
+      codigo: codigo,
+      calificaciones: calificaciones
+    };
+    this.alumnos.push(nuevoAlumno);
+    console.log("Alumno añadido");
+  }
   nuevaAsignatura(){}
 
 }

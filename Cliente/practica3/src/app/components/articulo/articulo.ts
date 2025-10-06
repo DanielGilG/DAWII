@@ -36,14 +36,4 @@ export class Articulo implements OnChanges{
   }
 
   nombrecito:string = "Gilberto";
-
-
-/* Codigo de Salva
-  buscar(){
-    let miArticulo = this.items.find((item) => item.nombre === this.nombrecito);
-  }
-
-  modificar(uds:number){
-    this.unidades = uds;
-  */
 }

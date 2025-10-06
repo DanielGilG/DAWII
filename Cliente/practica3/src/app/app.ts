@@ -13,5 +13,4 @@ import { Articulo } from "./components/articulo/articulo";
   styleUrls: ['./app.scss']
 })
 export class App {
-
 }
