@@ -27,13 +27,4 @@ export class Articulo implements OnChanges{
       this.unidades = item?.unidades ?? 0;
     }
   }
-
-
-  frutas = ['manzana', 'pera', 'naranja', 'plátano'];
-
-  constructor() {
-    this.frutas.forEach(element => console.log(element));
-  }
-
-  nombrecito:string = "Gilberto";
 }
