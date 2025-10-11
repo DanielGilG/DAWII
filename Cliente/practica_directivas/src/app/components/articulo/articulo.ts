@@ -8,24 +8,15 @@ import data from '../../items/articulos.json' assert { type: 'json' };
   styleUrl: './articulo.scss'
 })
 export class Articulo {
-  items = data;
-  //@Input() productoIndex : number = 0;
-  //@Input() productoId : any;
-
-  id = this.items.find(item => item.id === this.productoId)?.id;
-  nombre = this.items.find(item => item.id === this.productoId)?.nombre
-  categoria = this.items.find(item => item.id === this.productoId)?.categoria
-  descripcion = this.items.find(item => item.id === this.productoId)?.descripcion
-  unidades = this.items.find(item => item.id === this.productoId)?.unidades
-  precio = this.items.find(item => item.id === this.productoId)?.precio
-
-  //nombre = this.items[this.productoIndex].nombre;
-  //categoria = this.items[this.productoIndex].categoria;
-  //descripcion = this.items[this.productoIndex].descripcion;
-  //unidades = this.items[this.productoIndex].unidades;
-  //precio = this.items[this.productoIndex].precio;
-
 @Input() productoId: any;
+
+items = data;
+id : any;
+nombre : any;
+categoria : any;
+descripcion : any;
+unidades : any;
+precio : any;
 
 ngOnInit() {
   console.log('Producto ID recibido:', this.productoId);
