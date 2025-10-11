@@ -1,5 +1,5 @@
 @for (item of items; track item.id) {
-    <app-articulo [productoIndex]="$index"></app-articulo>
+    <app-articulo [productoId]="item.id"></app-articulo>
 }
 
 <router-outlet />
