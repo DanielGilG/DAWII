@@ -1,3 +1,5 @@
-
+@for (item of items; track item.id) {
+    <app-articulo [productoIndex]="$index"></app-articulo>
+}
 
 <router-outlet />
