@@ -1,7 +1,21 @@
-<app-fila [productoId]="'m1'" ></app-fila>
+<table class="table">
+   <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">id</th>
+            <th scope="col">nombre</th>
+            <th scope="col">categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of items; track item.id) {
+        <app-fila [productoId]="item.id"></app-fila>
+        }
+    </tbody>
+</table>
 
 @for (item of items; track item.id) {
-    <app-articulo [productoId]="item.id"></app-articulo>
+<app-articulo [productoId]="item.id"></app-articulo>
 }
 
 <router-outlet />
