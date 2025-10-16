@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import data from '../../items/array.json'
+import { Trabajador } from '../trabajador/trabajador';
 
 @Component({
   selector: 'app-trabajadores',
-  imports: [],
+  imports: [Trabajador],
   templateUrl: './trabajadores.html',
   styleUrl: './trabajadores.css'
 })

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import data from '../../items/array.json'
 
 @Component({
@@ -9,5 +9,6 @@ import data from '../../items/array.json'
 })
 export class Trabajador {
   trabajadores = data;
-  @Input() trabajador!:trabajadores
+  //@Input() trabajador!:trabajadores
+  @Output() borrarTrabajador= new EventEmitter<string>
 }
