@@ -2,7 +2,7 @@ No hay servicios, el hijo emite 3 cosas
 
 
 Crear carpeta Modelos con trabajador.ts
-```
+```ts
 export interface Trabajador {
   //campos
 }
@@ -12,3 +12,14 @@ export interface Trabajador {
 ```
 
 
+## Dentro de "trabajdores.html"
+```html
+@for{}
+```
+
+## Dentro de trabajador.ts
+```ts
+like(id:number){
+  this.likeTrabajador.emit(id)
+}
+```
