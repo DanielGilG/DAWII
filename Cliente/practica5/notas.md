@@ -23,3 +23,16 @@ like(id:number){
   this.likeTrabajador.emit(id)
 }
 ```
+
+para inyectar un sercvicio en trabajadores.ts:
+```ts
+miServicio=Inject(TrabajadoresService)
+```
+
+__wow!__
+
+! Los datos no se meten en trabajadores.ts, sino que se crea una variable 
+```ts
+trabajadores!:Trabajador[]
+```
+y luego se mete todo con el servicio.
