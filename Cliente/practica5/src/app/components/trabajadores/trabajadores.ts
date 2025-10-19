@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import data from '../../items/array.json'
 import { Trabajador } from '../trabajador/trabajador';
+import { TRABAJADORES } from '../../model/trabajador';
 
 @Component({
   selector: 'app-trabajadores',
@@ -9,14 +9,10 @@ import { Trabajador } from '../trabajador/trabajador';
   styleUrl: './trabajadores.css'
 })
 export class Trabajadores {
-  trabajadores = data;
-
+  trabajadores = TRABAJADORES;
 
   sumaVoto(nombre:string){
-    let voto = this.trabajadores.find(t => t.nombre === nombre);
-    if(voto){
-      voto.votos++;
-    }
+    this.trabajadores.find(t => t.nombre === nombre)!.votos++;
   }
 
   restaVoto(nombre:string){
