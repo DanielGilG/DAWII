@@ -1,14 +1,16 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import data from '../../items/array.json'
+import { TRABAJADORES } from '../../model/trabajador';
 
 @Component({
   selector: 'app-trabajador',
-  imports: [],
+  imports: [Trabajador],
   templateUrl: './trabajador.html',
   styleUrl: './trabajador.css'
 })
 export class Trabajador {
-  trabajadores = data;
-  //@Input() trabajador!:trabajadores
-  @Output() borrarTrabajador= new EventEmitter<string>
+  @Input() trabajador!:Trabajador[];
+
+  like(id:number){
+    this.likeTrabajador.emit(id)
+  }
 }

@@ -16,17 +16,13 @@ export class Trabajadores {
   }
 
   restaVoto(nombre:string){
-    let voto = this.trabajadores.find(t => t.nombre === nombre);
-    if(voto && voto.votos > 0){
-      voto.votos--;
+    if (this.trabajadores.find(t => t.nombre === nombre)!.votos > 0) {
+      this.trabajadores.find(t => t.nombre === nombre)!.votos--;
     }
   }
 
   borrar(nombre:string){
-    const index = this.trabajadores.findIndex(t => t.nombre === nombre);
-    if (index !== -1) {
-      this.trabajadores.splice(index, 1);
-    }
+    this.trabajadores.splice(this.trabajadores.findIndex(t => t.nombre === nombre));
   }
 
   //evento BorrarTrabajador desde hijo

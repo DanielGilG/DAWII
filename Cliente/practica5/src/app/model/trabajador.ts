@@ -1,8 +1,9 @@
 export interface Trabajador {
-    id: string;
+    id: number;
     nombre: string;
-    puesto: string;
-    salario: number;
+    cargo: string;
+    foto: string;
+    votos: number;
 }
 
 export const TRABAJADORES: Array<Trabajador> = [
