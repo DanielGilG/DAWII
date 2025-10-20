@@ -3,14 +3,13 @@ import { TRABAJADORES } from '../../model/trabajador';
 
 @Component({
   selector: 'app-trabajador',
-  imports: [Trabajador],
   templateUrl: './trabajador.html',
-  styleUrl: './trabajador.css'
+  styleUrls: ['./trabajador.css']
 })
 export class Trabajador {
-  @Input() trabajador!:Trabajador[];
+  @Input() trabajador!: EventEmitter<number>[];
 
-  like(id:number){
-    this.likeTrabajador.emit(id)
+  like(id: number) {
+    this.trabajador[id].emit(id);
   }
 }
