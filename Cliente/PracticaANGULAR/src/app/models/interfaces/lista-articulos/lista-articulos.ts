@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { ServicioArticulo } from '../../../services/servicio-articulo';
 import { Articulo, ARTICULOS } from '../../articulo';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-lista-articulos',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './lista-articulos.html',
   styleUrl: './lista-articulos.css',
 })
