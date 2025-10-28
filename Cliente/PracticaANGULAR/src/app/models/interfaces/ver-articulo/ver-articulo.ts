@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { Articulo, ARTICULOS } from '../../articulo';
+import { Component} from '@angular/core';
+import { Articulo} from '../../articulo';
 import { ServicioArticulo } from '../../../services/servicio-articulo';
 import { RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ver-articulo',
@@ -12,13 +13,15 @@ import { RouterLink } from '@angular/router';
   styleUrl: './ver-articulo.css',
 })
 export class VerArticulo {
-  @Input() id! : string;
+  articulo!:Articulo
 
-  articulos: Articulo[] = ARTICULOS;
-
-  constructor(private servicioArticulo: ServicioArticulo) {}
+  constructor(
+    private miRutaAtiva: ActivatedRoute,
+    private servicioArticulo: ServicioArticulo) {}
 
   ngOnInit() {
-    this.servicioArticulo.getArticulo(this.id)
+    this.miRutaAtiva
+    .params
+    .subscribe(params=>this.articulo=this.servicioArticulo.getArticulo(params['id'])!);
   }
 }
