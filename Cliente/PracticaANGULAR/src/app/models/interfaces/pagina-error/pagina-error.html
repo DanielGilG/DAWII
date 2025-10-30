@@ -1,1 +1,223 @@
-<p>pagina-error works!</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 — Not Found</title>
+  <meta name="description" content="404 — The page you're looking for couldn't be found." />
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#ffcc33;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.04);
+      --radius:18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(255,204,51,0.06), transparent 8%),
+        radial-gradient(1000px 500px at 90% 85%, rgba(51,153,255,0.03), transparent 6%),
+        var(--bg);
+      color: #e6eef6;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: var(--radius);
+      box-shadow: 0 8px 30px rgba(2,6,23,0.7);
+      padding:28px;
+      width:min(980px, 96vw);
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap:22px;
+      align-items:center;
+      border: 1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px);
+    }
+
+    .left{
+      padding:18px 8px;
+    }
+    h1{
+      margin:0 0 8px 0;
+      font-size: clamp(28px, 3.6vw, 44px);
+      letter-spacing:-0.02em;
+      line-height:1;
+    }
+    p.lead{
+      margin:8px 0 18px 0;
+      color:var(--muted);
+      font-size:16px;
+    }
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      border-radius:12px;
+      padding:10px 14px;
+      text-decoration:none;
+      font-weight:600;
+      cursor:pointer;
+      border: none;
+      transition:transform .14s ease, box-shadow .14s ease;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{
+      background: linear-gradient(90deg,#ffd76b,#ffb347);
+      color:#0b1220;
+    }
+    .btn-ghost{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.04);
+      padding:9px 12px;
+    }
+    .meta{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* SVG container */
+    .comic-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+    }
+    .svg-card{
+      width:100%;
+      max-width:360px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+      border-radius:14px;
+      padding:14px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.55);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    footer.small{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:10px;
+    }
+
+    @media (max-width:880px){
+      .card{grid-template-columns: 1fr; padding:18px}
+      .comic-wrap{order:-1}
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <section class="left" aria-hidden="false">
+      <h1 id="title">404 — Page Not Found</h1>
+      <p class="lead">Looks like the page took a wrong turn. Maybe the link is broken, or the page moved (or went on vacation).</p>
+
+      <div class="actions" role="group" aria-label="Navigation actions">
+        <a href="/" class="btn btn-primary" title="Go to homepage" aria-label="Go to homepage">🏠 Go home</a>
+        <a href="javascript:history.back()" class="btn btn-ghost" title="Go back">🔙 Go back</a>
+        <a href="/sitemap.xml" class="btn btn-ghost" title="Sitemap">🗺️ Sitemap</a>
+      </div>
+
+      <div class="meta" aria-hidden="true">
+        Tip: If you typed the URL manually, double-check for typos.
+      </div>
+
+      <footer class="small" aria-hidden="true">
+        If you think this is our fault, <a href="/contact" style="color:var(--accent); text-decoration:none;">let us know</a>.
+      </footer>
+    </section>
+
+    <aside class="comic-wrap" aria-label="Comic illustration">
+      <div class="svg-card" role="img" aria-label="Cartoon of an explorer shrugging beside a broken sign that reads 404">
+        <!-- Comic-style SVG illustration -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 600" width="100%" height="100%" aria-hidden="false" focusable="false">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#fff3cc" stop-opacity="0.95"/>
+              <stop offset="1" stop-color="#ffd97a" stop-opacity="0.95"/>
+            </linearGradient>
+            <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#051226" flood-opacity="0.45"/>
+            </filter>
+          </defs>
+
+          <!-- Background panel -->
+          <rect x="18" y="18" width="684" height="564" rx="14" fill="url(#g1)" stroke="#ffd27a" stroke-opacity="0.6"/>
+
+          <!-- Ground -->
+          <ellipse cx="360" cy="510" rx="260" ry="34" fill="#f4e6c6" opacity="0.9"/>
+
+          <!-- Broken sign -->
+          <g transform="translate(70,110)" filter="url(#shadow)">
+            <rect x="20" y="0" width="280" height="120" rx="12" fill="#fff" stroke="#e2b84a" stroke-width="6"/>
+            <text x="40" y="60" font-family="sans-serif" font-weight="800" font-size="56" fill="#20160b">404</text>
+            <text x="40" y="96" font-family="sans-serif" font-weight="600" font-size="18" fill="#6b4b2a">page not found</text>
+
+            <!-- cracked plank -->
+            <path d="M240 8 L260 24 L244 46 L268 78 L228 80" stroke="#ad7a3b" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <line x1="190" y1="118" x2="190" y2="200" stroke="#8b5e2b" stroke-width="10" stroke-linecap="round"/>
+          </g>
+
+          <!-- Cartoon explorer (simple, comicy) -->
+          <g transform="translate(370,160)" filter="none">
+            <!-- body -->
+            <path d="M60 220 C40 220 20 200 18 172 C16 142 46 136 80 136 C114 136 146 144 150 172 C154 200 120 220 96 220 Z" fill="#f3d9b8" stroke="#d1ad84" stroke-width="3"/>
+            <!-- jacket -->
+            <path d="M14 172 C24 150 48 132 80 132 C112 132 146 150 156 172 L156 210 C110 230 40 230 14 210 Z" fill="#6b9bd3" stroke="#4b78a8" stroke-width="3"/>
+            <!-- arms -->
+            <path d="M150 170 C178 160 198 178 218 170" stroke="#f3d9b8" stroke-width="18" stroke-linecap="round"/>
+            <path d="M20 170 C-8 160 -28 178 -48 170" stroke="#f3d9b8" stroke-width="18" stroke-linecap="round"/>
+            <!-- head -->
+            <circle cx="80" cy="100" r="42" fill="#fde2c8" stroke="#d6b083" stroke-width="3"/>
+            <!-- hair -->
+            <path d="M54 82 C62 62 98 60 106 82" fill="#3b2d20"/>
+            <!-- eyes & mouth -->
+            <circle cx="68" cy="98" r="5" fill="#0b1220"/>
+            <circle cx="92" cy="98" r="5" fill="#0b1220"/>
+            <path d="M68 116 C74 124 86 124 92 116" stroke="#5d3b2a" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+            <!-- backpack -->
+            <rect x="92" y="148" width="40" height="66" rx="8" fill="#c7dff8" stroke="#8fb0df" stroke-width="3"/>
+            <!-- little magnifier / map -->
+            <rect x="20" y="218" width="48" height="34" rx="6" fill="#fff" stroke="#e1caa8" stroke-width="3"/>
+            <text x="32" y="240" font-size="12" font-weight="700" fill="#6b4b2a">map</text>
+          </g>
+
+          <!-- Speech bubble -->
+          <g transform="translate(310,56)">
+            <path d="M42 6C82 6 138 10 176 36C196 48 210 74 206 98C203 115 186 136 150 148C126 156 82 164 46 150C20 140 6 118 4 96C2 62 14 28 42 12Z" fill="#ffffff" stroke="#f0d88d" stroke-width="4"/>
+            <text x="70" y="78" font-family="Comic Sans MS, ComicNeue, system-ui, sans-serif" font-size="24" font-weight="700" fill="#1b2b3b">Hmm…</text>
+            <text x="70" y="104" font-family="sans-serif" font-size="14" fill="#495a6a">Can't find this page</text>
+          </g>
+
+          <!-- small decorative stars -->
+          <g fill="#fff" opacity="0.9">
+            <circle cx="580" cy="90" r="3"/>
+            <circle cx="620" cy="140" r="2.2"/>
+            <circle cx="520" cy="40" r="2.6"/>
+          </g>
+
+        </svg>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

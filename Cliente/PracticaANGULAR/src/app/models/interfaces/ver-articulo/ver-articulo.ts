@@ -17,7 +17,8 @@ export class VerArticulo {
 
   constructor(
     private miRutaAtiva: ActivatedRoute,
-    private servicioArticulo: ServicioArticulo) {}
+    private servicioArticulo: ServicioArticulo) 
+  {}
 
   ngOnInit() {
     this.miRutaAtiva

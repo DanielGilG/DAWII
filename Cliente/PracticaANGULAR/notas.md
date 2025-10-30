@@ -1,7 +1,7 @@
 - [X] Servicio
 - [X] Lista Articulos
 - [X] Ver Articulo
-- [ ] Borrar Articulo
+- [X] Borrar Articulo
 - [ ] Modificar Articulo
 - [ ] Nuevo Articulo
   - [ ] Escoger Categoría
