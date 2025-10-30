@@ -18,8 +18,8 @@
             <td>{{articulo.precio}}</td>
             <td>{{articulo.unidades}}</td>
             <td><button type="button" class="btn btn-primary" routerLink="/articulo/{{articulo.id}}">Ver</button></td>
-            <td><button type="button" class="btn btn-warning"routerLink="modificar">Modificar</button></td>
-            <td><button type="button" class="btn btn-danger"routerLink="borrar">Eliminar</button></td>
+            <td><button type="button" class="btn btn-warning"routerLink="/modificar/{{articulo.id}}">Modificar</button></td>
+            <td><button type="button" class="btn btn-danger"routerLink="/borrar/{{articulo.id}}">Eliminar</button></td>
         </tr>
         }@empty{
         <div class="alert alert-danger">No hay articulos</div>

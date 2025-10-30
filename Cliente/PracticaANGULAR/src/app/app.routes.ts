@@ -10,7 +10,7 @@ export const routes: Routes = [
     { path: '', component: Inicio },
     { path: 'articulos', component: ListaArticulos},
     { path: 'articulo/:id', component: VerArticulo},
-    { path: 'modificar', component: ModificarArticulo},
-    { path: 'borrar', component: BorrarArticulo},
+    { path: 'modificar/:id', component: ModificarArticulo},
+    { path: 'borrar/:id', component: BorrarArticulo},
     { path: '**', component: PaginaError }
 ];
