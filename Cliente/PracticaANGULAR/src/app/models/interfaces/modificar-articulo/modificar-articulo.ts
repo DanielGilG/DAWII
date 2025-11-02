@@ -31,14 +31,20 @@ export class ModificarArticulo {
       .subscribe(params => this.articulo = this.miservicioArticulo.getArticulo(params['id'])!);
 
     this.form = this.fb.group({
-      id: [this.articulo.id],
       nombre: [this.articulo.nombre],
       descripcion: [this.articulo.descripcion],
       precio: [this.articulo.precio]
     });
   }
 
-  onSubmit() {
-    console.log("Form Submitted!");
+  modify() {
+    const nuevoArticulo: Articulo = {
+      nombre: this.form.value.nombre,
+      descripcion: this.form.value.descripcion,
+      precio: this.form.value.precio,
+      unidades: this.form.value.unidades
+    };
+    this.miservicioArticulo.postArticulo(nuevoArticulo);
+    console.log(nuevoArticulo);
   }
 }
