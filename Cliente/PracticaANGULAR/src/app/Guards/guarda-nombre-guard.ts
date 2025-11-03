@@ -1,14 +1,17 @@
 import { CanActivateFn } from '@angular/router';
 import { ServicioLogin } from '../services/servicio-login';
+import { inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 export const guardaNombreGuard: CanActivateFn = (route, state) => {
-  const servicioLogin = new ServicioLogin();
-  if (servicioLogin.isLogged === true) {
-    console.log("VALOR:" + servicioLogin.isLogged);
+  let log = inject(ServicioLogin);
+  let router = inject(Router);
+
+  if (log.isLogged) {
     return true;
   } else {
-    console.log("VALOR:" + servicioLogin.isLogged);
-    console.log("Acceso denegado por Guarda");
+    router.navigate(['/login']);
     return false;
   }
+
 };

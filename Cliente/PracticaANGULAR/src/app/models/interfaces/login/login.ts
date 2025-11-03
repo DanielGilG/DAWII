@@ -36,5 +36,6 @@ export class Login {
     console.log(nombre, password);
     
     this.miServicioLogin.conectar(nombre, password);
+    this.miRouter.navigate(['/articulos']);
   }
 }
