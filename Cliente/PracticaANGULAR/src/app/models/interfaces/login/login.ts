@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ServicioLogin } from '../../../services/servicio-login';
 import { Usuario } from '../../usuario';
@@ -19,7 +19,8 @@ export class Login {
 
   constructor(
     private fb: FormBuilder,
-    private miServicioLogin: ServicioLogin
+    private miServicioLogin: ServicioLogin,
+    private miRouter: Router
   ) { }
 
   ngOnInit() {
@@ -32,9 +33,8 @@ export class Login {
   conectar() {
     const nombre = this.form.value.nombre;
     const password = this.form.value.password;
-
+    console.log(nombre, password);
+    
     this.miServicioLogin.conectar(nombre, password);
-    // Aquí iría la lógica para verificar las credenciales
-    console.log(`Nombre: ${nombre}, Password: ${password}`);
   }
 }

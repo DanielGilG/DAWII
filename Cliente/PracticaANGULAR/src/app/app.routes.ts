@@ -6,6 +6,7 @@ import { VerArticulo } from './models/interfaces/ver-articulo/ver-articulo';
 import { ModificarArticulo } from './models/interfaces/modificar-articulo/modificar-articulo';
 import { BorrarArticulo } from './models/interfaces/borrar-articulo/borrar-articulo';
 import { guardaNombreGuard } from './Guards/guarda-nombre-guard';
+import { Login } from './models/interfaces/login/login';
 
 export const routes: Routes = [
     { path: '', component: Inicio},
@@ -13,5 +14,6 @@ export const routes: Routes = [
     { path: 'articulo/:id', component: VerArticulo},
     { path: 'modificar/:id', component: ModificarArticulo},
     { path: 'borrar/:id', component: BorrarArticulo},
+    { path: 'login', component: Login},
     { path: '**', component: PaginaError }
 ];

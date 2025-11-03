@@ -5,18 +5,16 @@
       <label class="form-label">Nombre</label>
       <input type="text"
              class="form-control"
-             formControlName="id"
-             [placeholder]="usuario.nombre">
+             formControlName="nombre">
     </div>
     <div class="mb-3">
       <label class="form-label">Password</label>
       <input type="text"
              class="form-control"
-             formControlName="nombre"
-             [placeholder]="usuario.password">
+             formControlName="password">
     </div>
 
     <button class="btn btn-primary" (click)="conectar()" routerLink="/articulos">Save Changes</button>
-    <button class="btn btn-secondary" routerLink="/articulos">Cancel</button>
+    <button class="btn btn-secondary" routerLink="/">Cancel</button>
   </form>
 </div>
