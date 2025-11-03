@@ -57,6 +57,6 @@ export class ModificarArticulo {
     this.newArticulo.unidades = this.form.value.unidades;
     this.newArticulo.precio = this.form.value.precio;
 
-    this.miservicioArticulo.postArticulo(this.newArticulo);
+    this.miservicioArticulo.putArticulo(this.newArticulo);
   }
 }
