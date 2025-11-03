@@ -19,6 +19,15 @@ export class ModificarArticulo {
   articulo!: Articulo
   form!: FormGroup;
 
+  newArticulo: Articulo = {
+    id: '',
+    nombre: '',
+    categoria: '',
+    descripcion: '',
+    unidades: 0,
+    precio: 0
+  }
+
   constructor(
     private miRutaAtiva: ActivatedRoute,
     private miservicioArticulo: ServicioArticulo,
@@ -31,20 +40,23 @@ export class ModificarArticulo {
       .subscribe(params => this.articulo = this.miservicioArticulo.getArticulo(params['id'])!);
 
     this.form = this.fb.group({
+      id: [this.articulo.id],
       nombre: [this.articulo.nombre],
       descripcion: [this.articulo.descripcion],
+      unidades: [this.articulo.unidades],
       precio: [this.articulo.precio]
     });
   }
 
   modify() {
-    const nuevoArticulo: Articulo = {
-      nombre: this.form.value.nombre,
-      descripcion: this.form.value.descripcion,
-      precio: this.form.value.precio,
-      unidades: this.form.value.unidades
-    };
-    this.miservicioArticulo.postArticulo(nuevoArticulo);
-    console.log(nuevoArticulo);
+    console.log(this.newArticulo);
+
+    this.newArticulo.id = this.form.value.id;
+    this.newArticulo.nombre = this.form.value.nombre;
+    this.newArticulo.descripcion = this.form.value.descripcion;
+    this.newArticulo.unidades = this.form.value.unidades;
+    this.newArticulo.precio = this.form.value.precio;
+
+    this.miservicioArticulo.postArticulo(this.newArticulo);
   }
 }
