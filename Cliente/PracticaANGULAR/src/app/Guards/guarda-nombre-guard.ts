@@ -1,11 +1,12 @@
 import { CanActivateFn } from '@angular/router';
+import { ServicioLogin } from '../services/servicio-login';
 
 export const guardaNombreGuard: CanActivateFn = (route, state) => {
-  let nombre = prompt("Introduzca su nombre para acceder a la aplicación:");
-
-  if (nombre === "Cesar"){
+  const servicioLogin = new ServicioLogin();
+  if (servicioLogin.isLogged) {
     return true;
-  }else{
+  } else {
+    console.log("Acceso denegado. Usuario no autenticado.");
     return false;
   }
 };

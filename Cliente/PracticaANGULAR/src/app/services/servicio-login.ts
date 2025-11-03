@@ -8,11 +8,13 @@ export class ServicioLogin {
   usuario : Usuario[] = USUARIOS
   isLogged : Boolean = false;
 
-  conectar(): void {
-    if this.usuario.find(u => u.nombre === nombre && u.password === password) {
+  conectar(nombre:string, password:string): void {
+    if (this.usuario.find(user => user.nombre === nombre && user.password === password)) {
       this.isLogged = true;
+      console.log("Usuario conectado");
     } else {
       this.isLogged = false;
+      console.log("Credenciales incorrectas");
     }
   }
 }

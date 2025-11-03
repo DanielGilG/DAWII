@@ -8,8 +8,8 @@ import { BorrarArticulo } from './models/interfaces/borrar-articulo/borrar-artic
 import { guardaNombreGuard } from './Guards/guarda-nombre-guard';
 
 export const routes: Routes = [
-    { path: '', component: Inicio, canActivate:[guardaNombreGuard]},
-    { path: 'articulos', component: ListaArticulos},
+    { path: '', component: Inicio},
+    { path: 'articulos', component: ListaArticulos, canActivate:[guardaNombreGuard]},
     { path: 'articulo/:id', component: VerArticulo},
     { path: 'modificar/:id', component: ModificarArticulo},
     { path: 'borrar/:id', component: BorrarArticulo},
