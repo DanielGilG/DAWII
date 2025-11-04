@@ -18,6 +18,11 @@
         <li class="nav-item">
           <a class="nav-link">User: {{nombre}}</a>
         </li>
+        @if (isLogged) {
+        <li class="nav-item">
+          <a type="Button" class="btn btn-danger" (click)="desconectar()">Desconectar</a>
+        </li>
+        }
       </ul>
     </div>
   </div>
