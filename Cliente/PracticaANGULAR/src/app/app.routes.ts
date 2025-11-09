@@ -4,16 +4,18 @@ import { PaginaError } from './models/interfaces/pagina-error/pagina-error';
 import { ListaArticulos } from './models/interfaces/lista-articulos/lista-articulos';
 import { VerArticulo } from './models/interfaces/ver-articulo/ver-articulo';
 import { ModificarArticulo } from './models/interfaces/modificar-articulo/modificar-articulo';
+import { NuevoArticulo } from './models/interfaces/nuevo-articulo/nuevo-articulo';
 import { BorrarArticulo } from './models/interfaces/borrar-articulo/borrar-articulo';
 import { guardaNombreGuard } from './Guards/guarda-nombre-guard';
 import { Login } from './models/interfaces/login/login';
 
 export const routes: Routes = [
-    { path: '', component: Inicio},
-    { path: 'articulos', component: ListaArticulos, canActivate:[guardaNombreGuard]},
-    { path: 'articulo/:id', component: VerArticulo},
-    { path: 'modificar/:id', component: ModificarArticulo},
-    { path: 'borrar/:id', component: BorrarArticulo},
-    { path: 'login', component: Login},
-    { path: '**', component: PaginaError }
+  { path: '', component: Inicio },
+  { path: 'articulos', component: ListaArticulos, canActivate: [guardaNombreGuard] },
+  { path: 'articulo/:id', component: VerArticulo },
+  { path: 'modificar/:id', component: ModificarArticulo },
+  { path: 'nuevo', component: NuevoArticulo, canActivate: [guardaNombreGuard] },
+  { path: 'borrar/:id', component: BorrarArticulo },
+  { path: 'login', component: Login },
+  { path: '**', component: PaginaError }
 ];
