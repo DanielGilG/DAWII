@@ -8,7 +8,7 @@ import { Articulo } from '../../articulo';
   styleUrl: './fetch-component.css',
 })
 export class FetchComponent {
-  articulos!: Articulo
+  articulos!: Articulo[];
   url: string = 'http://localhost:3000/articulos';
 
   async ngOnInit() {

@@ -8,11 +8,13 @@ import { NuevoArticulo } from './models/interfaces/nuevo-articulo/nuevo-articulo
 import { BorrarArticulo } from './models/interfaces/borrar-articulo/borrar-articulo';
 import { guardaNombreGuard } from './Guards/guarda-nombre-guard';
 import { Login } from './models/interfaces/login/login';
+import { FetchComponent } from './models/interfaces/fetch-component/fetch-component';
 
 export const routes: Routes = [
   { path: '', component: Inicio },
   { path: 'articulos', component: ListaArticulos, canActivate: [guardaNombreGuard] },
   { path: 'articulo/:id', component: VerArticulo },
+  { path: 'fetcher', component: FetchComponent },
   { path: 'modificar/:id', component: ModificarArticulo },
   { path: 'nuevo', component: NuevoArticulo, canActivate: [guardaNombreGuard] },
   { path: 'borrar/:id', component: BorrarArticulo },
